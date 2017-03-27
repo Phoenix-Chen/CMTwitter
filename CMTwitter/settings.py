@@ -54,7 +54,10 @@ ROOT_URLCONF = 'CMTwitter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                # Set template directory
+                os.path.join(BASE_DIR, 'CMTwitter/templates'),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
