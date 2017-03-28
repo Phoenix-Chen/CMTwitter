@@ -3,6 +3,7 @@
     "model": "user.user",
     "pk": 1,
     "fields": {
+      "u_id": 1,
       "name": "John Doe",
       "email": "a@a.com",
       "password": "a"
@@ -12,9 +13,30 @@
     "model": "user.user",
     "pk": 2,
     "fields": {
+      "u_id": 2,
       "name": "Jane Doe",
       "email": "b@b.com",
       "password": "b"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 3,
+    "fields": {
+      "u_id": 3,
+      "name": "Adam",
+      "email": "c@c.com",
+      "password": "c"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 4,
+    "fields": {
+      "u_id": 4,
+      "name": "Bob",
+      "email": "d@d.com",
+      "password": "d"
     }
   }
 ]
