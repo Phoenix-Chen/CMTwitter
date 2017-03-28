@@ -1,0 +1,20 @@
+[
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "name": "John Doe",
+      "email": "a@a.com",
+      "password": "a"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "name": "Jane Doe",
+      "email": "b@b.com",
+      "password": "b"
+    }
+  }
+]
