@@ -1,12 +1,100 @@
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>CMTwitter</title>
         
         <!-- Bootstrap Core CSS -->
-        <link href="{{ STATIC_URL }}/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link href="{% static "CSS/home.css" %}" rel="stylesheet">
     </head>
     <body>
+        <div class="container">
+            <h1 class="title"> CMTwitter </h1>
+            <p> A Twitter Clone </p>
+            <p><a data-toggle="modal" data-target="#loginModal" class="btn btn-outline-inverse login-btn">Login</a></p>
+        </div>
         
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button-->
+                        <h4 class="modal-title">CMTwitter</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Login</h4>
+                        <div class="form-group">
+                            <div class="icon-addon addon-md">
+                                <input type="text" placeholder="Email" class="form-control" id="loginEmail" />
+                                <label for="loginEmail" class="glyphicon glyphicon-envelope" rel="tooltip" title="email"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="icon-addon addon-md">
+                                <input type="password" placeholder="Password" class="form-control" id="loginPassword" />
+                                <label for="loginPassword" class="glyphicon glyphicon-lock" rel="tooltip" title="password"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Don't have an account? <a data-dismiss="modal" data-toggle="modal" data-target="#signupModal">Sign up</a> here.</p>
+                        <button type="button" id="loginBtn" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Signup Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button-->
+                        <h4 class="modal-title">CMTwitter</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Sign Up</h4>
+                        <div class="form-group">
+                            <div class="icon-addon addon-md">
+                                <input type="text" placeholder="Name" class="form-control" id="signupName" />
+                                <label for="signupName" class="glyphicon glyphicon-user" rel="tooltip" title="name"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="icon-addon addon-md">
+                                <input type="text" placeholder="Email" class="form-control" id="signupEmail" />
+                                <label for="signupEmail" class="glyphicon glyphicon-envelope" rel="tooltip" title="email"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="icon-addon addon-md">
+                                <input type="password" placeholder="Password" class="form-control" id="signupPassword" />
+                                <label for="signupPassword" class="glyphicon glyphicon-lock" rel="tooltip" title="password"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="icon-addon addon-md">
+                                <input type="password" placeholder="Re-enter" class="form-control" id="reenterPassword" />
+                                <label for="reenterPassword" class="glyphicon glyphicon-lock" rel="tooltip" title="password"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Already have an account? <a data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</a> here.</p>
+                        <button type="button" id="signupBtn" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery -->
+        <script src="{% static "JS/jquery-3.1.0.min.js" %}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
     </body>
 </html>
