@@ -21,7 +21,7 @@ class FollowListField(models.IntegerField):
         if value is None:
             return value
 
-        return unicode(value)
+        return str(value)
 
     def value_to_string(self, obj):
         value = self._get_val_from_obj(obj)
@@ -45,4 +45,7 @@ class follow(models.Model):
         db_table = 'CMTwitter_follow'
         
     u_id = models.IntegerField(default=0)
-    follow = FollowListField()
+    following = FollowListField()
+    
+    def __unicode__(self):
+        return self.u_id
