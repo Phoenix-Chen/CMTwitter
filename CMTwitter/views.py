@@ -9,3 +9,8 @@ def home(request):
     if request.session.get('logged_in') != None:
         return redirect('/')
     return render(request, 'home.html')
+
+def profile(request):
+    if request.session.get('logged_in') == None:
+        return redirect('/home')
+    return render(request, 'profile.html')

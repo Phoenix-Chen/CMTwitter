@@ -1,3 +1,7 @@
+body {
+    background-color: #FCE3DB;
+}
+
 .navbar-brand {
     color: #FFF;
     cursor: default;
@@ -20,4 +24,9 @@
     cursor: default;
     background-color: #ff6833;
     color: #eee;
+}
+
+.container {
+    height: 100vh;
+    padding-top: 50px;
 }

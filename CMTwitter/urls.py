@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^home', views.home, name='home'),
     url(r'^user/', include('user.urls')),
+    url(r'^profile', views.profile, name='profile'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
