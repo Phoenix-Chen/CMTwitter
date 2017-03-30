@@ -1,11 +1,11 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import redirect, render, render_to_response
 
 def index(request):
-    print("1")
-    if request.session.get('logged_in', False):
-        print("2")
+    if request.session.get('logged_in') == None:
         return redirect('/home')
     return render(request, 'index.html')
 
 def home(request):
+    if request.session.get('logged_in') != None:
+        return redirect('/')
     return render(request, 'home.html')

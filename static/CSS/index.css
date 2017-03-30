@@ -1,0 +1,23 @@
+.navbar-brand {
+    color: #FFF;
+    cursor: default;
+}
+
+.navbar-brand:hover {
+    color: #eee;
+}
+
+.navbar {
+    background-color: #ff6833;
+    color: #FFF;
+}
+
+.nav > li > a:focus, .nav > li > a {
+    color: #FFF;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    cursor: default;
+    background-color: #ff6833;
+    color: #eee;
+}
