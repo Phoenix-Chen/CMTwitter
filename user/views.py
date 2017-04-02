@@ -5,6 +5,8 @@ from rest_framework import permissions
 from rest_framework.response import Response
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
+from datetime import datetime
+import time
 
 
 @api_view(['POST'])
@@ -16,6 +18,7 @@ def login(request):
         try:
             if user.objects.get(email=e).password == p:
                 request.session['logged_in'] = user.objects.get(email=e).u_id
+                request.session['last_update'] = datetime.min.strftime("%Y-%m-%d %H:%M:%S")
                 return Response(True)
         except ObjectDoesNotExist:
             pass
