@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^logout', views.logout),
     url(r'^finduser', views.find_user),
     url(r'^profileinfo', views.get_profile_info),
+    url(r'^follow', views.follow_user),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

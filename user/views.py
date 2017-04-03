@@ -71,3 +71,20 @@ def get_profile_info(request):
         except ObjectDoesNotExist:
             pass
     return Response('')
+
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def follow_user(request):
+    if request.method == 'POST':
+        try:
+            pid = request.GET.get('uid', None)
+            obj = follow.objects.get(u_id=request.session['logged_in'])
+            followings = re.findall(r"[\w']+", obj.following)
+            if str(pid) not in followings:
+                followings.append(str(pid))
+                obj.following = [int(i) for i in followings]
+                obj.save(update_fields=['following'])
+                return Response(True)
+        except ObjectDoesNotExist:
+            pass
+    return Response(False)
