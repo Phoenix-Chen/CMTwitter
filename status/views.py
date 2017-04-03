@@ -41,6 +41,7 @@ def add_status(request):
     if request.method == 'POST':
         try:
             uid = request.session['logged_in']
+            text = request.GET.get('text', None)
             
         except ObjectDoesNotExist:
             pass

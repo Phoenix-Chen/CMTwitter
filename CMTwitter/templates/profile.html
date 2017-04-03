@@ -1,4 +1,5 @@
 {% load static %}
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -8,7 +9,8 @@
         <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
         
         <!-- Custom CSS -->
-        <link href="{% static "CSS/index.css" %}" rel="stylesheet">
+        <link href="{% static "CSS/navbar.css" %}" rel="stylesheet">
+        <link href="{% static "CSS/profile.css" %}" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-fixed-top">
@@ -32,12 +34,26 @@
             </div>
         </nav>
         
-        <div class="container">
-            <div class="row">
-                
+        <div class="parallax">
+            <div class="parallax-section">
+                <div class="parallax-layer parallax-layer-base">
+                    <div class="container">
+                        <div class="vertical-center">
+                            <div id="profile-pic"></div>
+                            <h3 id="profile-name"></h3>
+                            <button type="button" class="btn" id="follow-btn"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="parallax-layer parallax-layer-back"></div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    
+                </div>
             </div>
         </div>
-        
+    
         <!-- jQuery -->
         <script src="{% static "JS/jquery-3.1.0.min.js" %}"></script>
 
@@ -46,5 +62,6 @@
         
         <!-- Custom JavaScript -->
         <script src="{% static "JS/navbar.js" %}"></script>
+        <script src="{% static "JS/profile.js" %}"></script>
     </body>
 </html>

@@ -1,0 +1,84 @@
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  -webkit-perspective-origin-x: 100%;
+  perspective-origin-x: 100%;
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.parallax-section {
+  height: 60%;
+  z-index: 1;
+  color: #fff;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax-layer-base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.parallax-layer-back {
+  -webkit-transform: translateZ(-200px) scale(2);
+  transform: translateZ(-200px) scale(2);
+  z-index: 3;
+  margin-left: -10px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%;
+  transform-origin-x: 100%;
+}
+
+.parallax-section .parallax-layer-back {
+  background: url("../IMG/profile-bg.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.content {
+  z-index: 2;
+  position: relative;
+  background: #FCE3DB;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.vertical-center > .btn {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+#profile-pic {
+    width: 100px;
+    height: 100px;
+}

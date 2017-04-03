@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^home', views.home, name='home'),
     url(r'^user/', include('user.urls')),
     url(r'^status/', include('status.urls')),
-    url(r'^profile', views.profile, name='profile'),
+    url(r'^profile(?P<uid>\w{0,50})/$', views.profile, name='profile'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

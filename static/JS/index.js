@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    //curtime = new Date().getTime();
     loadStatus();
 });
 

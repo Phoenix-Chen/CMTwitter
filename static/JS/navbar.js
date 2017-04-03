@@ -21,7 +21,7 @@ function searchUser() {
     keyword = $('#searchbar').val();
     if (keyword != null && keyword != '') {
         $.ajax({
-            url : "user/finduser?keyword=" + keyword,
+            url : "http://localhost:8000/user/finduser?keyword=" + keyword,
             type : "GET",
             success : function(data) {
                 var obj = jQuery.parseJSON(data);
