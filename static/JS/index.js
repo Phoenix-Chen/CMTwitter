@@ -18,7 +18,7 @@ function loadStatus() {
                                         <p class="post-time">Posted on: ' + obj[i].time + '</p>\
                                     </div>\
                                     <div class="col-md-1">\
-                                        <i class="glyphicon glyphicon-heart like-btn ';
+                                        <i onclick="likeStatus(' + obj[i].post_id + ')" class="glyphicon glyphicon-heart like-btn ';
                 if (obj[i].liked == 'True') {
                     card += 'liked';
                 }
@@ -30,6 +30,20 @@ function loadStatus() {
                                 </div>\
                             </div>';
                 $('#status-container').prepend(card);
+            }
+        }
+    });
+}
+
+function likeStatus(pid) {
+    $.ajax({
+        url : "status/likestatus?pid=" + pid,
+        type : "POST",
+        success : function(data) {
+            if (data) {
+                location.reload();
+            } else {
+                alert("You already liked this status.");
             }
         }
     });

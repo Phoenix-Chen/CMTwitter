@@ -34,3 +34,33 @@ def get_new_status(request):
         except ObjectDoesNotExist:
             pass
     return Response('')
+
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def add_status(request):
+    if request.method == 'POST':
+        try:
+            uid = request.session['logged_in']
+            
+        except ObjectDoesNotExist:
+            pass
+    return Response(False)
+
+
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def like_status(request):
+    if request.method == 'POST':
+        try:
+            pid = request.GET.get('pid', None)
+            uid = request.session['logged_in']
+            obj = status.objects.get(post_id = pid)
+            likes = re.findall(r"[\w']+", obj.likes)
+            if (str(uid) not in likes):
+                likes.append(str(uid))
+                obj.likes = [int(i) for i in likes]
+                obj.save(update_fields=['likes'])
+                return Response(True)
+        except ObjectDoesNotExist:
+            pass
+    return Response(False)
