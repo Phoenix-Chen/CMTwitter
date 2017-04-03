@@ -33,6 +33,7 @@ class status(models.Model):
 
     post_id = models.IntegerField(default=0)
     author_id = models.IntegerField(default=0)
+    author_name = models.CharField(max_length=50, default='')
     text = models.CharField(max_length=150)
     likes = LikeListField()
     time = models.CharField(max_length=30)

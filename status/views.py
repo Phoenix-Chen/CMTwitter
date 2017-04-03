@@ -18,11 +18,16 @@ def get_new_status(request):
             followings = re.findall(r"[\w']+", follow.objects.get(u_id=uid).following)
             s = '[ '
             for f in followings:
-                print(f)
                 objs = status.objects.filter(author_id=f)
                 for obj in objs:
                     if datetime.strptime(obj.time, '%Y-%m-%d %H:%M:%S') > datetime.strptime(request.session['last_update'], '%Y-%m-%d %H:%M:%S'):
-                        s = s + '{ "post_id":"' + str(obj.post_id) + '", "author_id":"' + str(obj.author_id) + '", "text":"' + obj.text + '", "time":"' + obj.time + '"},'
+                        s = s + '{ "post_id":"' + str(obj.post_id) + '", "author_id":"' + str(obj.author_id) + '", "author_name":"' + obj.author_name + '", "text":"' + obj.text + '", "time":"' + obj.time + '","liked":"'
+                        likes = re.findall(r"[\w']+", obj.likes)
+                        if str(uid) in likes:
+                            s += str(True)
+                        else:
+                            s += str(False)
+                        s = s + '"},'
             s = s[:-1] + ']'
             #request.session['last_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           
             return Response(s)

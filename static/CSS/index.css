@@ -30,3 +30,86 @@ body {
     height: 100vh;
     padding-top: 50px;
 }
+
+#status-container {
+    padding-top: 20px;
+}
+
+.card {
+    display: block;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.card > img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+}
+
+.status-info {
+    height: 80px;
+    padding-left: 25px;
+}
+
+.author-name {
+    height: 40px;
+    line-height: 40px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.status-text-container {
+    padding-top: 5px;
+}
+
+.like-btn {
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
+.liked {
+    color: #DC4FC8;
+}
+
+.like-btn:hover {
+    color: #DC4FC8;
+}
+
+#add-message-icon {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    background: url("../IMG/add-circular.png") no-repeat center center;
+    background-size: cover;
+    bottom:25px;
+    right:25px;
+    margin:0;
+    padding:5px 3px;
+}
+
+#addMessage > .modal-dialog > .modal-content {
+    background-color: #ff6833;
+    color: #fff;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
